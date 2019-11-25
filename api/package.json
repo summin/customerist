@@ -1,5 +1,5 @@
 {
-    "name": "autohaus-royal-angabe-aleontjev",
+    "name": "api",
     "version": "1.0.0",
     "description": "Express+Mongo REST API Server",
     "scripts": {
