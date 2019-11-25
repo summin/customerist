@@ -1,27 +1,24 @@
 {
-    "name": "ahr-api",
+    "name": "autohaus-royal-angabe-aleontjev",
     "version": "1.0.0",
-    "description": "Autohaus Roal abgabe REST API server",
-    "main": "index.js",
+    "description": "Express+Mongo REST API Server",
     "scripts": {
         "start": "node ./server.js",
-        "start-dev": "nodemon ./server.js",
-        "test": "test"
+        "dev": "nodemon ./server.js"
     },
     "dependencies": {
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.19.0",
         "cors": "^2.8.4",
+        "cuid": "^2.1.6",
         "express": "^4.17.1",
         "express-jwt": "^5.3.1",
         "jsonwebtoken": "^8.5.1",
-        "mongodb": "^3.3.3",
+        "mongodb": "^3.2.7",
         "mongoose": "^5.6.9",
         "rootpath": "^0.1.2"
     },
     "devDependencies": {
         "nodemon": "^1.19.1"
-    },
-    "author": "",
-    "license": "ISC"
+    }
 }

@@ -1,0 +1,79 @@
+{
+    "_id": {
+        "name": "ID",
+        "prepend": "",
+        "w": 5,
+        "type": "text",
+        "options": "",
+        "gr": 1,
+        "xgr": 1,
+        "comments": "",
+        "none": true
+    },
+    "firstName": {
+        "name": "First Name",
+        "prepend": "",
+        "w": 5,
+        "type": "text",
+        "options": "",
+        "gr": 1,
+        "xgr": 1,
+        "comments": "",
+        "none": ""
+    },
+    "lastName": {
+        "name": "Last Name",
+        "prepend": "",
+        "w": 5,
+        "type": "text",
+        "options": "",
+        "gr": 1,
+        "xgr": 1,
+        "comments": "",
+        "none": ""
+    },
+    "gender": {
+        "name": "Gender",
+        "prepend": "",
+        "w": 2,
+        "type": "drop-down",
+        "options": "Mann, Frau, Andere",
+        "gr": 1,
+        "xgr": 1,
+        "comments": "",
+        "none": ""
+    },
+    "street": {
+        "name": "Street",
+        "prepend": "",
+        "w": 6,
+        "type": "text",
+        "options": "",
+        "gr": 2,
+        "xgr": 1,
+        "comments": "",
+        "none": ""
+    },
+    "postCode": {
+        "name": "Post Code",
+        "prepend": "",
+        "w": 2,
+        "type": "text",
+        "options": "",
+        "gr": 2,
+        "xgr": 1,
+        "comments": "",
+        "none": ""
+    },
+    "city": {
+        "name": "City",
+        "prepend": "",
+        "w": 4,
+        "type": "text",
+        "options": "",
+        "gr": 2,
+        "xgr": 1,
+        "comments": "",
+        "none": ""
+    }
+}

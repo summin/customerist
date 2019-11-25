@@ -3,26 +3,24 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const dev = process.env.NODE_ENV !== "production";
 
 const config = {
-    mode: dev ? "development" : "production",
-    context: path.join( __dirname, "src" ),
-    devtool: dev ? "none" : "source-map",
     entry: {
         main: [
-            './index.js',
-            './css/app.scss'
+            './src/index.js',
+            './src/_css/app.scss'
         ]
     },
     output: {
-        path: path.resolve( __dirname, "dist" ),
-        filename: '[name].bundle.js'
+        path: path.resolve(__dirname, 'public'),
+        filename: '[name].[hash].js'
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        publicPath: '/',
+        historyApiFallback: true,
         port: 8080
       },
+
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
     },
@@ -36,7 +34,7 @@ const config = {
                     options: {
                         presets: [
                             '@babel/preset-env',
-                            '@babel/preset-react',
+                            '@babel/react',
                             '@babel/preset-typescript'
                         ],
                         plugins: [
@@ -49,6 +47,7 @@ const config = {
             },
             {
                 test: /\.scss$/,
+                exclude: path.resolve(__dirname, 'node_modules'),
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
@@ -61,6 +60,7 @@ const config = {
             },
             {
                 test: /.(png|jpg|woff(2)?|eot|ttf|otf|svg|gif)(\?[a-z0-9=\.]+)?$/,
+                exclude: path.resolve(__dirname, 'node_modules'),
                 use: [
                     {
                         loader: 'file-loader',
@@ -73,9 +73,16 @@ const config = {
             },
             {
                 test: /\.css$/,
+                exclude: path.resolve(__dirname, 'node_modules'),
                 use: ['style-loader', 'css-loader', 'postcss-loader']
             }
         ]
+    },
+    externals: {
+        myApp: 'myApp',
+        config: JSON.stringify({
+            apiUrl: 'http://localhost:4000'
+        })
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -84,29 +91,11 @@ const config = {
             template: './src/index.html'
         }),
         new ExtractTextPlugin(path.join('app[hash].css')),
+        new webpack.DefinePlugin({
+            '__DEV__': JSON.stringify(true),
+            '__API_HOST__': JSON.stringify('http://localhost/my-app/'),
+        }),
+
     ],
 }
-
-// if (process.env.NODE_ENV === 'production') {
-//     config.plugins.push(
-//         new webpack.optimize.UglifyJsPlugin({
-//             sourceMap: false,
-//             compress: {
-//                 sequences: true,
-//                 conditionals: true,
-//                 booleans: true,
-//                 if_return: true,
-//                 join_vars: true,
-//                 drop_console: true
-//             },
-//             output: {
-//                 comments: false
-//             },
-//             minimize: true
-//         })
-//     );
-// }
-
-
-
 module.exports = config;

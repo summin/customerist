@@ -1,0 +1,40 @@
+.header {
+    color: #0faf;
+    font-size: 15px;
+}
+
+.nav-item a {
+    color: black !important;
+}
+
+.nav a {
+    color: black !important;
+}
+
+.navbar button {
+    font-weight: 600 !important;
+}
+
+@include media-breakpoint-down(sm) {
+    .navbtn {
+        margin: 3px;
+    }
+
+    .dropdown.nav-item {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .navbar-brand {
+        position: relative;
+        margin: 0 auto 0 0;
+        top: 0;
+    }
+
+    .navbtngroup {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 3px 0;
+    }
+}

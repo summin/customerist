@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    
+}
+
+@import "Header";
+@import "../HomePage/components/Primitives/index.scss";
+@import "../Elements/ChartPie/index.scss";
+@import "../Elements/BarsX/index.scss";
+@import "../Elements/Bars/index.scss";
+@import "../Elements/BarsStacked/index.scss";
+@import "../Elements/BarsXStacked/index.scss";
+@import "../Elements/F/index.scss";
+@import "fx";
+@import "./bootstrap/bootstrap";
+@import './devexpress/dist/dx-react-chart-bootstrap4.css';
+
+
+.nav-item a {
+    color: black !important;
+}
+
+.nav a {
+    color: black !important;
+}
+
+a {
+    color: black !important;
+}
+
+.dropdown button {
+    font-weight: 600 !important;
+}
+
+.navbar button {
+    font-weight: 600 !important;
+}
+
+.overflowscroll {
+    height: calc(100vh - 100px);
+    overflow-y: scroll !important;
+}
+
+.overflowHidden {
+    overflow: hidden;
+}
+
+@media (max-width: 575px) {
+    .img {
+        padding: 0 25% 0 25%;
+    }
+}
+
+.first-caps {
+    text-transform: capitalize;
+}
+
+.navbtngroup {
+    margin-left: auto
+}
+
+.status {
+    color: red;
+}
+
+.word-wrap {
+    word-wrap: break-word;
+}
+
+.cursorHand {
+    cursor: hand;
+}
+
+.cursorDefault {
+    cursor: default;
+}
+
+.fixedBottom {
+    position: fixed;
+    bottom: 0
+}
+
+.smaller {
+    transform: scale(0.5);
+}
+
+@include media-breakpoint-down(sm) {
+    .navbtn {
+        margin: 3px;
+    }
+
+    .dropdown.nav-item {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .navbar-brand {
+        position: relative;
+        margin: 0 auto 0 0;
+        top: 0;
+    }
+
+    .navbtngroup {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 3px 0;
+    }
+}
