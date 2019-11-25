@@ -1,7 +1,7 @@
 {
-    "name": "ahrclient",
+    "name": "client",
     "version": "1.0.0",
-    "description": "Autohaus Royal Angabe Client",
+    "description": "Const Return",
     "main": "index.js",
     "scripts": {
         "build": "webpack --mode production",

@@ -8,12 +8,3 @@ const refGen = function (collection, entry) {
 }
 
 module.exports = refGen
-
-// const gen = async function() {
-//     const ref = await db[collection].count() + Math.floor(100 * Math.random())
-//     if (await db[collection].findOne({ [entry]: ref })) {
-//         gen();
-//     }
-//     return ref
-// }
-// return gen

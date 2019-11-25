@@ -27,7 +27,6 @@ function get(attr) {
 }
 
 function modify(attr) {
-    console.log(attr)
     const requestOptions = {
         method: 'PUT',
         headers: { ...authHeader(), 'Content-Type': 'application/json' },

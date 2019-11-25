@@ -6,7 +6,7 @@ const TableCustomers = ({ ...props }) => {
 
     const customers = props.customers
     const editEntry = props.editEntry
-    console.log(customers)
+
 
     return (
         <Table responsive>

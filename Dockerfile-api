@@ -1,0 +1,10 @@
+FROM node:10.9.0-alpine
+
+WORKDIR /usr/src/api
+COPY ./api/package.json .
+RUN npm install    
+COPY ./api .
+
+CMD [ "sleep", "5" ]
+CMD [ "npm", "start" ]
+

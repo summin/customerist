@@ -29,7 +29,7 @@ const FormMain = ({ ...props }) => {
     const { formFields, formData, buttonName, loading } = props
 
     const handleSubmit = event => {
-        console.log(event.target)
+
         let data = {}
         Object.values(event.target).map((i) => {
             i.name && Object.assign(data, { [i.name]: i.value })
